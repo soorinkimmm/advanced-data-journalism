@@ -12,8 +12,9 @@ writer.writeheader()
 for row in reader:
 	row['first_name'] = row['first_name'].upper()
 	row['zip'] = row['zip'].zfill(5)
-	row['city'] = row['city'].replace.
-	writer.writerow(row)
+	row['city'] = row['city'].replace('&nbsp;', '_')
+	if int(row['amount']) >= 1000:
+		writer.writerow(row)
 
 
 	
